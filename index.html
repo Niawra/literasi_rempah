@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Literasi Rempah — SMP Negeri 3 Karanglewas</title>
+<meta name="description" content="Literasi Rempah: media belajar digital interaktif untuk mengenal 7 rempah Indonesia lewat ensiklopedia, mini game, kuis, XP, dan badge.">
+<meta name="theme-color" content="#183C2B">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#beranda" class="brand" aria-label="Literasi Rempah, ke beranda"><span aria-hidden="true">🌿</span> <span class="brand-text">LITERASI REMPAH</span></a>
+    <nav id="mainNav" class="main-nav" aria-label="Menu utama">
+      <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#jelajah">Jelajah Rempah</a></li>
+        <li><a href="#belajar">Belajar</a></li>
+        <li><a href="#games">Mini Games</a></li>
+        <li><a href="#kuis">Kuis</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+      </ul>
+    </nav>
+    <a href="#perjalanan" class="xp-chip" id="xpChip" aria-label="Lihat perjalananmu">
+      <span class="xp-top"><span aria-hidden="true">⭐</span> <strong id="navXp">0</strong> XP</span>
+      <span class="xp-level" id="navLevel">Level 1 · Pemula</span>
+      <span class="xp-mini" aria-hidden="true"><span id="navBar"></span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Buka menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="beranda" aria-labelledby="heroTitle">
+  <svg class="deco deco-leaf l1" viewBox="0 0 100 120" aria-hidden="true"><path d="M50 5C90 30 95 80 50 115 5 80 10 30 50 5Z"/><path d="M50 22V108" fill="none" stroke="currentColor" stroke-width="2" opacity=".5"/></svg>
+  <svg class="deco deco-leaf l2" viewBox="0 0 100 120" aria-hidden="true"><path d="M50 5C90 30 95 80 50 115 5 80 10 30 50 5Z"/><path d="M50 22V108" fill="none" stroke="currentColor" stroke-width="2" opacity=".5"/></svg>
+  <svg class="deco deco-leaf l3" viewBox="0 0 100 120" aria-hidden="true"><path d="M50 5C90 30 95 80 50 115 5 80 10 30 50 5Z"/></svg>
+  <svg class="deco deco-line" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 220C120 140 200 300 330 210S560 90 680 170 780 120 800 100" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M0 260C140 200 240 320 380 250S600 150 800 190" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".6"/></svg>
+  <span class="deco deco-circle c1" aria-hidden="true"></span>
+  <span class="deco deco-circle c2" aria-hidden="true"></span>
+
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow light">Digital Museum Rempah · SMP Negeri 3 Karanglewas</p>
+      <h1 class="hero-title" id="heroTitle">KENAL REMPAH,<br><em>KENAL INDONESIA.</em></h1>
+      <p class="hero-sub">Yuk jelajahi dunia rempah Indonesia melalui cerita, fakta menarik, permainan, dan tantangan seru.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#jelajah">🌱 Mulai Menjelajah</a>
+        <a class="btn btn-ghost" href="#games">🎮 Main Sekarang</a>
+      </div>
+      <ul class="hero-points" aria-label="Keunggulan">
+        <li>Foto asli rempah</li>
+        <li>6 mini game</li>
+        <li>Kuis seru</li>
+        <li>Semua langsung terbuka</li>
+      </ul>
+    </div>
+    <div class="collage" id="heroCollage" aria-label="Kolase foto 7 rempah. Pilih foto untuk membuka detailnya."></div>
+  </div>
+</section>
+
+<!-- ================= STATISTIK ================= -->
+<section class="stats container" aria-label="Statistik Literasi Rempah">
+  <div class="stat reveal"><strong class="stat-num" data-count="7" data-suffix="">7</strong><span>Rempah yang dipelajari</span></div>
+  <div class="stat reveal" style="--d:.08s"><strong class="stat-num" data-count="6" data-suffix="+">6+</strong><span>Mini Games</span></div>
+  <div class="stat reveal" style="--d:.16s"><strong class="stat-num" data-count="15" data-suffix="+">15+</strong><span>Pertanyaan Kuis</span></div>
+  <div class="stat reveal" style="--d:.24s"><strong class="stat-num">∞</strong><span>Hal Baru untuk Ditemukan</span></div>
+</section>
+
+<!-- ================= PERNAH SADAR NGGAK ================= -->
+<section class="section" id="sadar" aria-labelledby="sadarTitle">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Pemanasan</p>
+      <h2 id="sadarTitle">Pernah sadar nggak?</h2>
+      <p>Ketuk atau tekan kartu untuk membuka jawabannya.</p>
+    </header>
+    <div class="flip-grid" id="flipGrid"></div>
+  </div>
+</section>
+
+<!-- ================= JELAJAH ================= -->
+<section class="section section-alt" id="jelajah" aria-labelledby="jelajahTitle">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Ensiklopedia Digital</p>
+      <h2 id="jelajahTitle">Jelajahi Dunia Rempah</h2>
+      <p>Tujuh rempah, tujuh cerita. Pilih yang mana saja — semuanya terbuka untukmu. Setiap kartu menyimpan mini ensiklopedia lengkap.</p>
+    </header>
+    <div class="spice-grid" id="spiceGrid"></div>
+  </div>
+</section>
+
+<!-- ================= BELAJAR ================= -->
+<section class="section" id="belajar" aria-labelledby="belajarTitle">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Belajar</p>
+      <h2 id="belajarTitle">Rempah Bukan Sekadar Bumbu.</h2>
+      <p>Rempah terhubung dengan makanan, minuman, budaya, sejarah, lingkungan, dan kehidupan masyarakat Indonesia. Ketuk kartu untuk membaca lebih lanjut.</p>
+    </header>
+    <div class="why-grid" id="whyGrid">
+      <article class="why-card reveal">
+        <button class="why-btn" aria-expanded="false" aria-controls="why1">
+          <span class="why-ico" aria-hidden="true">🌱</span>
+          <h3>Mengenal Alam</h3>
+          <p>Setiap rempah berasal dari tanaman nyata. Ada yang berupa rimpang, batang, atau buah.</p>
+          <span class="why-more">Baca lanjut <b aria-hidden="true">+</b></span>
+        </button>
+        <div class="why-extra" id="why1" hidden>
+          <ul>
+            <li>Rimpang: jahe, kunyit, kencur, lengkuas, temulawak.</li>
+            <li>Batang beraroma: serai.</li>
+            <li>Buah dan biji: kapulaga.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="why-card reveal" style="--d:.08s">
+        <button class="why-btn" aria-expanded="false" aria-controls="why2">
+          <span class="why-ico" aria-hidden="true">🍲</span>
+          <h3>Mengenal Makanan</h3>
+          <p>Rempah memberi warna, aroma, dan rasa pada hidangan sehari-hari.</p>
+          <span class="why-more">Baca lanjut <b aria-hidden="true">+</b></span>
+        </button>
+        <div class="why-extra" id="why2" hidden>
+          <ul>
+            <li>Kunyit mewarnai nasi kuning.</li>
+            <li>Lengkuas dan serai mengharumkan soto serta gulai.</li>
+            <li>Kencur menjadi bumbu sambal pecel.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="why-card reveal" style="--d:.16s">
+        <button class="why-btn" aria-expanded="false" aria-controls="why3">
+          <span class="why-ico" aria-hidden="true">🏺</span>
+          <h3>Mengenal Budaya</h3>
+          <p>Rempah hadir dalam tradisi, dari syukuran hingga minuman hangat keluarga.</p>
+          <span class="why-more">Baca lanjut <b aria-hidden="true">+</b></span>
+        </button>
+        <div class="why-extra" id="why3" hidden>
+          <ul>
+            <li>Nasi kuning dan tumpeng pada perayaan.</li>
+            <li>Jamu tradisional yang diwariskan turun-temurun.</li>
+            <li>Wedang dan bandrek penghangat saat hujan.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="why-card reveal" style="--d:.24s">
+        <button class="why-btn" aria-expanded="false" aria-controls="why4">
+          <span class="why-ico" aria-hidden="true">🌏</span>
+          <h3>Mengenal Indonesia</h3>
+          <p>Nusantara dikenal dunia sejak lama karena kekayaan rempahnya.</p>
+          <span class="why-more">Baca lanjut <b aria-hidden="true">+</b></span>
+        </button>
+        <div class="why-extra" id="why4" hidden>
+          <ul>
+            <li>Maluku dijuluki Kepulauan Rempah.</li>
+            <li>Rempah mendorong pelayaran dan perdagangan antarbangsa.</li>
+            <li>Kini rempah tetap hidup di dapur dan budaya kita.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <!-- Timeline -->
+    <header class="section-head reveal" style="margin-top:clamp(56px,8vw,96px)" id="timelineHead">
+      <p class="eyebrow">Museum Waktu</p>
+      <h2>Perjalanan Rempah</h2>
+      <p>Dari dapur sederhana hingga jalur pelayaran dunia. Ini cerita singkatnya.</p>
+    </header>
+    <ol class="timeline">
+      <li class="tl-item reveal">
+        <span class="tl-time">Sejak dahulu</span>
+        <h3>Rempah dalam kehidupan sehari-hari</h3>
+        <p>Masyarakat Nusantara memanfaatkan tumbuhan beraroma sebagai bumbu, ramuan jamu, dan pelengkap tradisi. Pengetahuan ini diwariskan dari generasi ke generasi.</p>
+      </li>
+      <li class="tl-item reveal">
+        <span class="tl-time">Ribuan tahun lalu</span>
+        <h3>Rempah menyeberangi lautan</h3>
+        <p>Cengkeh dan pala dari Maluku sudah dikenal di wilayah yang jauh. Jalur laut menghubungkan Nusantara dengan India, Tiongkok, dan Timur Tengah.</p>
+      </li>
+      <li class="tl-item reveal">
+        <span class="tl-time">Abad ke-16</span>
+        <h3>Bangsa Eropa mencari rempah</h3>
+        <p>Portugis tiba di Maluku pada 1512, disusul Spanyol dan Belanda. Rempah menjadi salah satu alasan besar pelayaran bangsa Eropa ke Nusantara.</p>
+      </li>
+      <li class="tl-item reveal">
+        <span class="tl-time">Masa kolonial</span>
+        <h3>Perdagangan yang dikuasai pihak asing</h3>
+        <p>Perdagangan rempah dikuasai dan dimonopoli, sehingga berdampak besar bagi kehidupan masyarakat di daerah penghasil rempah.</p>
+      </li>
+      <li class="tl-item reveal">
+        <span class="tl-time">Hari ini</span>
+        <h3>Rempah tetap hidup</h3>
+        <p>Rempah hadir di kuliner, minuman, dan jamu. Budaya jamu Indonesia diakui UNESCO sebagai Warisan Budaya Takbenda pada 2023. Pemanfaatannya terus berkembang.</p>
+      </li>
+    </ol>
+
+    <!-- Rempah di sekitar kita -->
+    <header class="section-head reveal" style="margin-top:clamp(56px,8vw,96px)" id="sekitar">
+      <p class="eyebrow">Dekat Denganmu</p>
+      <h2>Rempah di Sekitar Kita</h2>
+      <p>Coba lihat dapur rumahmu. Berapa rempah yang bisa kamu temukan?</p>
+    </header>
+    <div class="pantry reveal">
+      <fieldset>
+        <legend>Centang rempah yang ada di rumahmu</legend>
+        <div class="pantry-list" id="pantryList"></div>
+      </fieldset>
+      <p class="pantry-result" id="pantryResult" aria-live="polite">Belum ada yang dicentang. Tidak apa-apa, coba tanyakan ke orang di rumah!</p>
+    </div>
+    <div class="around-grid">
+      <article class="around-card reveal"><h3>Makanan</h3><p>Soto, rendang, gulai, dan pecel berbumbu rempah. Coba tebak, rempah apa saja yang ada di dalamnya?</p></article>
+      <article class="around-card reveal" style="--d:.06s"><h3>Minuman</h3><p>Wedang jahe, bandrek, wedang serai, dan jamu: hangat, wangi, dan akrab di keluarga.</p></article>
+      <article class="around-card reveal" style="--d:.12s"><h3>Obat tradisional</h3><p>Beberapa rempah dipakai dalam jamu secara turun-temurun. Jamu bukan pengganti obat dokter, jadi tanyakan pada orang dewasa atau tenaga kesehatan.</p></article>
+      <article class="around-card reveal" style="--d:.18s"><h3>Budaya</h3><p>Nasi kuning saat syukuran, jamu gendong, dan minuman hangat keluarga adalah warisan budaya rempah.</p></article>
+      <article class="around-card reveal" style="--d:.24s"><h3>Lingkungan</h3><p>Rempah seperti serai, jahe, dan kunyit mudah ditanam di pot atau pekarangan. Rumah jadi lebih hijau dan bumbu selalu segar.</p></article>
+    </div>
+
+    <!-- Random fact -->
+    <div class="fact-zone reveal" id="fakta">
+      <div class="fact-card" id="factCard" aria-live="polite">
+        <p class="fact-tag">Fakta Rempah</p>
+        <p class="fact-text">Tekan tombol di bawah untuk mendapatkan fakta acak tentang rempah Indonesia.</p>
+      </div>
+      <button class="btn btn-primary" id="factBtn">✨ Kasih Aku Fakta!</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MINI GAMES ================= -->
+<section class="section section-dark" id="games" aria-labelledby="gamesTitle">
+  <div class="container">
+    <header class="section-head light reveal">
+      <p class="eyebrow light">Main sambil belajar</p>
+      <h2 id="gamesTitle">MINI GAMES</h2>
+      <p>Enam permainan, semuanya langsung bisa dimainkan. Pilih yang kamu suka, kapan saja.</p>
+    </header>
+    <div class="game-menu" id="gameMenu" role="tablist" aria-label="Pilih mini game">
+      <button role="tab" class="game-tab" data-game="puzzle" aria-selected="true" aria-controls="game-puzzle" id="tab-puzzle"><span aria-hidden="true">🧩</span><strong>Photo Puzzle</strong><small>Susun foto asli</small></button>
+      <button role="tab" class="game-tab" data-game="guess" aria-selected="false" aria-controls="game-guess" id="tab-guess" tabindex="-1"><span aria-hidden="true">🔎</span><strong>Tebak Rempah</strong><small>Ikuti petunjuk</small></button>
+      <button role="tab" class="game-tab" data-game="memory" aria-selected="false" aria-controls="game-memory" id="tab-memory" tabindex="-1"><span aria-hidden="true">🧠</span><strong>Memory Rempah</strong><small>Cocokkan kartu</small></button>
+      <button role="tab" class="game-tab" data-game="match" aria-selected="false" aria-controls="game-match" id="tab-match" tabindex="-1"><span aria-hidden="true">🔗</span><strong>Pasangkan Rempah</strong><small>Hubungkan ciri</small></button>
+      <button role="tab" class="game-tab" data-game="word" aria-selected="false" aria-controls="game-word" id="tab-word" tabindex="-1"><span aria-hidden="true">🔤</span><strong>Susun Kata</strong><small>Rangkai huruf</small></button>
+      <button role="tab" class="game-tab" data-game="myth" aria-selected="false" aria-controls="game-myth" id="tab-myth" tabindex="-1"><span aria-hidden="true">⚖️</span><strong>Mitos atau Fakta</strong><small>Benar atau salah?</small></button>
+    </div>
+
+    <!-- PUZZLE -->
+    <div class="game-panel" id="game-puzzle" role="tabpanel" aria-labelledby="tab-puzzle">
+      <div class="game-head"><h3>Photo Puzzle</h3><p>Foto dipotong otomatis. Seret kepingan untuk menukar, atau ketuk dua kepingan (cocok untuk HP).</p></div>
+      <div class="puzzle-layout">
+        <div class="puzzle-controls">
+          <fieldset><legend>Pilih rempah</legend><div class="chips" id="puzzleSpiceChips"></div></fieldset>
+          <fieldset><legend>Tingkat kesulitan</legend>
+            <div class="chips" id="puzzleLevelChips">
+              <button class="chip" data-size="3" aria-pressed="true">Easy 3×3</button>
+              <button class="chip" data-size="4" aria-pressed="false">Medium 4×4</button>
+              <button class="chip" data-size="5" aria-pressed="false">Hard 5×5</button>
+            </div>
+          </fieldset>
+          <div class="p-stats" aria-live="off">
+            <div><span>Waktu</span><strong id="pTime">00:00</strong></div>
+            <div><span>Langkah</span><strong id="pMoves">0</strong></div>
+            <div><span>Hint</span><strong id="pHints">3</strong></div>
+          </div>
+          <div class="progress"><div class="progress-bar" id="pProgressBar"></div></div>
+          <p class="progress-text" id="pProgressText">0 dari 9 kepingan tepat</p>
+          <div class="btn-row">
+            <button class="btn btn-primary" id="puzzleHintBtn">💡 Hint</button>
+            <button class="btn btn-ghost" id="puzzleRestartBtn">↻ Mulai Ulang</button>
+          </div>
+          <p class="muted-light">Hint menampilkan gambar lengkap sebentar saja, tidak menyelesaikan puzzle.</p>
+        </div>
+        <div class="puzzle-stage">
+          <div class="puzzle-board" id="puzzleBoard" role="group" aria-label="Papan puzzle"></div>
+          <div class="puzzle-preview" id="puzzlePreview" hidden role="img" aria-label="Gambar lengkap sebagai petunjuk"></div>
+        </div>
+      </div>
+      <div class="result-card" id="puzzleResult" hidden aria-live="polite"></div>
+    </div>
+
+    <!-- OTHER GAMES -->
+    <div class="game-panel" id="game-guess" role="tabpanel" aria-labelledby="tab-guess" hidden>
+      <div class="game-head"><h3>Tebak Rempah</h3><p>Foto mulai buram. Minta petunjuk untuk membuatnya makin jelas, lalu tebak rempahnya.</p></div>
+      <div id="guessArea"></div>
+    </div>
+    <div class="game-panel" id="game-memory" role="tabpanel" aria-labelledby="tab-memory" hidden>
+      <div class="game-head"><h3>Memory Rempah</h3><p>Buka dua kartu dan temukan pasangan foto rempah yang sama.</p></div>
+      <div id="memoryArea"></div>
+    </div>
+    <div class="game-panel" id="game-match" role="tabpanel" aria-labelledby="tab-match" hidden>
+      <div class="game-head"><h3>Pasangkan Rempah</h3><p>Pilih rempah di kiri, lalu pilih pasangannya di kanan.</p></div>
+      <div id="matchArea"></div>
+    </div>
+    <div class="game-panel" id="game-word" role="tabpanel" aria-labelledby="tab-word" hidden>
+      <div class="game-head"><h3>Susun Kata</h3><p>Susun huruf acak menjadi nama rempah. Kamu juga bisa mengetik dengan keyboard.</p></div>
+      <div id="wordArea"></div>
+    </div>
+    <div class="game-panel" id="game-myth" role="tabpanel" aria-labelledby="tab-myth" hidden>
+      <div class="game-head"><h3>Mitos atau Fakta</h3><p>Baca pernyataan, lalu putuskan: mitos atau fakta?</p></div>
+      <div id="mythArea"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KUIS ================= -->
+<section class="section" id="kuis" aria-labelledby="kuisTitle">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Quiz Time 🌿</p>
+      <h2 id="kuisTitle">SEBERAPA JAGO KAMU TENTANG REMPAH?</h2>
+    </header>
+    <div class="quiz-shell reveal" id="quizArea" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ================= PERJALANANMU ================= -->
+<section class="section section-alt" id="perjalanan" aria-labelledby="perjTitle">
+  <div class="container">
+    <header class="section-head reveal">
+      <p class="eyebrow">Dashboard</p>
+      <h2 id="perjTitle">PERJALANANMU</h2>
+      <p>XP, level, dan badge adalah hadiah atas usahamu. Semua materi dan game selalu terbuka, tanpa syarat apa pun.</p>
+    </header>
+    <div class="dash reveal">
+      <div class="dash-main">
+        <div class="dash-level">
+          <span class="dash-star" aria-hidden="true">⭐</span>
+          <div>
+            <p class="dash-lv" id="dashLevel">Level 1 · Pemula</p>
+            <p class="dash-xp" id="dashXpText">0 XP</p>
+          </div>
+        </div>
+        <div class="progress big"><div class="progress-bar" id="dashBar"></div></div>
+        <p class="progress-text" id="dashToNext">50 XP menuju Level 2</p>
+        <div class="dash-stats">
+          <div><strong id="dashExplored">0/7</strong><span>Rempah dijelajahi</span></div>
+          <div><strong id="dashGames">0</strong><span>Game selesai</span></div>
+          <div><strong id="dashQuiz">—</strong><span>Nilai kuis terbaik</span></div>
+        </div>
+        <div class="dash-empty" id="dashEmpty" hidden>
+          <p><strong>Belum ada progres, dan itu tidak apa-apa!</strong> Buka satu rempah atau coba satu game, lalu lihat XP-mu bertambah di sini.</p>
+          <div class="btn-row"><a class="btn btn-dark" href="#jelajah">🌱 Jelajahi rempah</a><a class="btn btn-outline" href="#games">🎮 Main game</a></div>
+        </div>
+        <button class="btn btn-outline small" id="resetBtn">Reset Progres</button>
+      </div>
+      <div class="dash-badges">
+        <h3>Koleksi Badge</h3>
+        <ul class="badge-grid" id="badgeGrid"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TENTANG ================= -->
+<section class="section" id="tentang" aria-labelledby="tentangTitle">
+  <div class="container about">
+    <div class="about-text reveal">
+      <p class="eyebrow">Tentang</p>
+      <h2 id="tentangTitle">Tentang Literasi Rempah</h2>
+      <p><strong>Literasi Rempah</strong> adalah media pembelajaran digital untuk mengenalkan rempah Indonesia kepada siswa SMP Negeri 3 Karanglewas. Materi disusun sebagai ensiklopedia mini, lalu diperkuat dengan permainan dan kuis agar belajar terasa menyenangkan.</p>
+      <p>Tujuannya sederhana: membuat siswa mengenal, menghargai, dan bangga dengan rempah sebagai bagian dari alam, makanan, budaya, dan sejarah Indonesia.</p>
+    </div>
+    <div class="about-cards">
+      <article class="about-card reveal"><h3>Belajar</h3><p>Ensiklopedia 7 rempah dengan foto asli, ciri-ciri, pemanfaatan, budaya, dan fakta.</p></article>
+      <article class="about-card reveal" style="--d:.08s"><h3>Bermain</h3><p>Enam mini game dan kuis acak yang membantu mengingat materi.</p></article>
+      <article class="about-card reveal" style="--d:.16s"><h3>Berkembang</h3><p>XP, level, dan badge mencatat perjalananmu, tanpa mengunci materi apa pun.</p></article>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <p class="footer-brand">LITERASI REMPAH</p>
+      <p class="footer-school">SMP NEGERI 3 KARANGLEWAS</p>
+      <p class="footer-quote">Belajar dari rempah, mengenal Indonesia.</p>
+    </div>
+    <nav aria-label="Navigasi footer">
+      <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#jelajah">Jelajah Rempah</a></li>
+        <li><a href="#belajar">Belajar</a></li>
+        <li><a href="#games">Mini Games</a></li>
+        <li><a href="#kuis">Kuis</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="footer-copy">© <span id="year">2026</span> Literasi Rempah · SMP Negeri 3 Karanglewas</p>
+</footer>
+
+<!-- ================= MODAL DETAIL REMPAH ================= -->
+<div class="modal" id="spiceModal" hidden role="dialog" aria-modal="true" aria-labelledby="spiceModalTitle">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel">
+    <button class="modal-close" id="spiceClose" aria-label="Tutup detail rempah">✕</button>
+    <div class="detail-grid">
+      <aside class="detail-photo" id="detailPhoto"></aside>
+      <div class="detail-main">
+        <p class="eyebrow" id="detailCategory"></p>
+        <h2 id="spiceModalTitle"></h2>
+        <p class="sci" id="detailSci"></p>
+        <div class="tabs" role="tablist" id="detailTabs" aria-label="Bagian materi">
+          <button role="tab" id="tab-kenali" data-tab="kenali" aria-selected="true" aria-controls="detailPanel">Kenali</button>
+          <button role="tab" id="tab-ciri" data-tab="ciri" aria-selected="false" aria-controls="detailPanel" tabindex="-1">Ciri-ciri</button>
+          <button role="tab" id="tab-guna" data-tab="guna" aria-selected="false" aria-controls="detailPanel" tabindex="-1">Pemanfaatan</button>
+          <button role="tab" id="tab-budaya" data-tab="budaya" aria-selected="false" aria-controls="detailPanel" tabindex="-1">Budaya</button>
+          <button role="tab" id="tab-fakta" data-tab="fakta" aria-selected="false" aria-controls="detailPanel" tabindex="-1">Fakta</button>
+        </div>
+        <div class="tab-panel" id="detailPanel" role="tabpanel" tabindex="0"></div>
+        <div class="detail-nav">
+          <button class="btn btn-outline small" id="detailPrev">← Sebelumnya</button>
+          <button class="btn btn-outline small" id="detailNext">Berikutnya →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LEVEL UP -->
+<div class="levelup" id="levelUp" hidden role="dialog" aria-modal="true" aria-labelledby="levelUpTitle">
+  <div class="levelup-card">
+    <div class="levelup-star" aria-hidden="true">⭐</div>
+    <h2 id="levelUpTitle">⭐ LEVEL UP!</h2>
+    <p id="levelUpText"></p>
+    <button class="btn btn-primary" id="levelUpClose">Lanjut Menjelajah</button>
+  </div>
+</div>
+
+<!-- CONFIRM -->
+<dialog class="confirm" id="confirmDialog" aria-labelledby="confirmTitle">
+  <h3 id="confirmTitle">Reset semua progres?</h3>
+  <p>XP, level, badge, dan riwayat game di perangkat ini akan dihapus. Tindakan ini tidak bisa dibatalkan.</p>
+  <div class="btn-row">
+    <button class="btn btn-outline" id="confirmNo">Batal</button>
+    <button class="btn btn-danger" id="confirmYes">Ya, reset</button>
+  </div>
+</dialog>
+
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<noscript><p style="padding:20px;text-align:center">Situs ini membutuhkan JavaScript agar game dan kuis dapat berjalan.</p></noscript>
+<script src="script.js"></script>
+</body>
+</html>
