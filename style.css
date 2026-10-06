@@ -142,35 +142,39 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 8px)}
 .stat{background:#fff;border-radius:var(--radius);padding:22px 18px;text-align:center;box-shadow:var(--shadow);border-bottom:5px solid var(--yellow)}
 .stat-num{display:block;font-family:var(--font-head);font-weight:400;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1.1;color:var(--green-dark)}
 .stat span{font-size:.92rem;font-weight:700;color:var(--brown)}
-/* =========================
-   FLIP CARD GRID
-========================= */
-
-/* ================= FLIP CARDS ================= */
+/* =========================================
+   FLIP CARDS - RESPONSIVE
+   ========================================= */
 
 .flip-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  gap: 20px;
+  width: 100%;
+  align-items: stretch;
 }
 
 .flip {
   position: relative;
+  display: block;
   width: 100%;
   min-width: 0;
-  height: 230px;
+  height: 250px;
   padding: 0;
+  margin: 0;
   border: 0;
   background: transparent;
-  display: block;
   text-align: left;
+  cursor: pointer;
   perspective: 1000px;
 }
 
 .flip-inner {
   position: relative;
+  display: block;
   width: 100%;
   height: 100%;
+  min-height: 250px;
   transition: transform .6s ease;
   transform-style: preserve-3d;
 }
@@ -186,17 +190,20 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 8px)}
   height: 100%;
   box-sizing: border-box;
 
-  padding: 22px;
+  padding: 24px;
 
-  border-radius: var(--radius);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  border-radius: var(--radius);
 
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 
   box-shadow: var(--shadow-sm);
+
+  overflow: hidden;
 }
 
 .flip-front {
@@ -209,10 +216,16 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 8px)}
 }
 
 .flip-front .q {
+  display: block;
+  width: 100%;
   font-family: var(--font-head);
-  font-size: 1.3rem;
-  line-height: 1.25;
+  font-size: 1.25rem;
+  line-height: 1.4;
   color: var(--cream);
+
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .flip-front small,
@@ -221,6 +234,7 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 8px)}
   letter-spacing: .1em;
   text-transform: uppercase;
   font-size: .72rem;
+  line-height: 1.3;
   opacity: .85;
 }
 
@@ -231,81 +245,37 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 8px)}
 }
 
 .flip-back p {
+  display: block;
+  width: 100%;
+
+  margin: 0;
+
   font-weight: 700;
-  font-size: 1.02rem;
-  line-height: 1.45;
+  font-size: 1rem;
+  line-height: 1.55;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
-
-/* RESPONSIVE FLIP CARD */
-
+/* TABLET */
 @media (max-width: 960px) {
   .flip-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 560px) {
-  .flip-grid {
-    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .flip {
-    height: 220px;
+    height: 240px;
+  }
+
+  .flip-inner {
+    min-height: 240px;
   }
 }
 
-/* =========================
-   TEXT DI DALAM KARTU
-========================= */
-
-.flip-front h3,
-.flip-front h4,
-.flip-back h3,
-.flip-back h4 {
-  margin: 0 0 10px;
-  line-height: 1.25;
-  overflow-wrap: break-word;
-  word-break: normal;
-}
-
-.flip-front p,
-.flip-back p {
-  margin: 0;
-  line-height: 1.5;
-  font-size: 15px;
-  overflow-wrap: break-word;
-  word-break: normal;
-}
-
-/* Kalau ada list */
-.flip-front ul,
-.flip-back ul {
-  margin: 8px 0 0;
-  padding-left: 20px;
-}
-
-.flip-front li,
-.flip-back li {
-  margin-bottom: 6px;
-  line-height: 1.4;
-}
-
-/* =========================
-   BADGE
-========================= */
-
-.flip .collage-badge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  z-index: 5;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
+/* HP */
 @media (max-width: 768px) {
   .flip-grid {
     grid-template-columns: 1fr;
@@ -313,17 +283,61 @@ section[id]{scroll-margin-top:calc(var(--nav-h) + 8px)}
   }
 
   .flip {
-    height: 240px;
-    min-height: 240px;
+    width: 100%;
+    height: 220px;
+    min-height: 220px;
   }
 
-  .flip-inner,
-  .flip-face {
-    min-height: 240px;
+  .flip-inner {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
   }
 
   .flip-face {
     padding: 20px;
+    border-radius: 18px;
+  }
+
+  .flip-front .q {
+    font-size: 1.05rem;
+    line-height: 1.45;
+  }
+
+  .flip-back p {
+    font-size: .95rem;
+    line-height: 1.5;
+  }
+}
+
+/* HP KECIL */
+@media (max-width: 480px) {
+  .flip {
+    height: 215px;
+    min-height: 215px;
+  }
+
+  .flip-inner {
+    min-height: 215px;
+  }
+
+  .flip-face {
+    padding: 18px;
+  }
+
+  .flip-front .q {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  .flip-back p {
+    font-size: .92rem;
+    line-height: 1.5;
+  }
+
+  .flip-front small,
+  .flip-back small {
+    font-size: .68rem;
   }
 }
 /* EXPLORATION */
